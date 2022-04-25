@@ -36,11 +36,17 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Carol T:
+https://github.com/carol-tsai
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Kyle G:
+https://github.com/kgiunta
 
-If you followed tutorials, include links to those here as well.
+Kaleb S:
+https://github.com/kaleb1027
+
+Julian R:
+https://github.com/julianr3
 
 ## License
 
