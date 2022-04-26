@@ -3,7 +3,9 @@ const { User, Playlist, Song } = require("../models");
 const { route } = require("./api/user-routes");
 
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 router.get("/login", (req, res) => {

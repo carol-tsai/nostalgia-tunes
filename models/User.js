@@ -35,9 +35,7 @@ User.init(
         len: [6],
       },
     },
-    // created_at: {
-    //   timestamps,
-    // },
+
     country_code: {
       type: DataTypes.INTEGER,
     },
