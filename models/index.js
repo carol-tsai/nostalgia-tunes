@@ -2,7 +2,7 @@
 const User = require('./User');
 const Playlist = require('./Playlist');
 const Song = require('./Song');
-const PlaylistSong = require('./PlaylistSong');
+
 
 // Playlist belongs to user
 Playlist.belongsTo(User, {
@@ -15,25 +15,19 @@ User.hasMany(Playlist, {
    onDelete: 'CASCADE',
 })
 
-// Products belongToMany Tags (through ProductTag)
-Playlist.belongsToMany(Song, {
-   through: {
-      model: PlaylistSong,
-      unique: false
-   },
+Song.belongsTo(Playlist, {
+   foreignKey: 'playlist_id',
 });
-// Tags belongToMany Products (through ProductTag)
-Song.belongsToMany(Playlist, {
-   through: {
-      model: PlaylistSong,
-      unique: false
-   },
-});
+
+// Categories have many Products
+Playlist.hasMany(Song, {
+   foreignKey: 'playlist_id',
+   onDelete: 'CASCADE',
+})
 
 module.exports = {
    User,
    Playlist,
    Song,
-   PlaylistSong,
 };
 
