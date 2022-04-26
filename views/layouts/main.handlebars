@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nostalgia Tunes</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <a href="https://www.fontspace.com/category/disco"><img src="https://see.fontimg.com/api/renderfont4/v51E/eyJyIjoiZnMiLCJoIjo4MCwidyI6MTAwMCwiZnMiOjgwLCJmZ2MiOiIjRTJCMTBDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Tm9zdGFsZ2lhIFR1bmVz/discoteque-st.png" alt="Disco fonts"></a>
+</head>
+
+<body>
+  <header>
+    <h1>Nostalgia Tunes</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+  <main>
+    <aside>
+      <h2>Playlist here</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
