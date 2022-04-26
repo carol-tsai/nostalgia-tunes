@@ -35,9 +35,9 @@ User.init(
         len: [6],
       },
     },
-    created_at: {
-      timestamps,
-    },
+    // created_at: {
+    //   timestamps,
+    // },
     country_code: {
       type: DataTypes.INTEGER,
     },
@@ -51,7 +51,7 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "user",
