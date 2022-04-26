@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Song } = require('../../models');
 
-router.post('/:id', async (req, res) => {
+router.post('/:playlist_id', async (req, res) => {
     try {
       const newSong = await Song.create({
         ...req.body,
+        playlist_id: req.params.playlist_id
       });
   
       res.status(200).json(newSong);
