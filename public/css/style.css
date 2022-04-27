@@ -1,8 +1,7 @@
-/* #loginContainer {
-  background-image: url(../images/boomboxes.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.page-title {
+  display: flex;
+  justify-content: center;
+}
 
 :root {
   --primary: #3d5852;
@@ -130,7 +129,7 @@ img {
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 100%;
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
