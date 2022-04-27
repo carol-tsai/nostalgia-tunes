@@ -1,7 +1,11 @@
 
 
 <div class="row mb-4 project">
-  <p>Hello World</p>
+  {{#if loggedIn}}
+  <p>Welcome</p>
+  {{else}}
+  <p>Log in to access all of our features!</p>
+  {{/if}}
 </div>
 
 <form>

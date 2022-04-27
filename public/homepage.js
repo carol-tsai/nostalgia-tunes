@@ -153,16 +153,15 @@ async function getBillboard(event) {
   const chartData = await response.json();
   console.log(chartData);
 
-    // console.log(day);
+    
 }
 
-// var day = getElementById("day");
-// console.log(day.value);
 
 var songs = document.querySelector("#songs")
 
 for (i = 0; i <= 20; i++){
   var test = document.createElement("div");
-  test.textContent = "SONG";
+  test.textContent = "test"
   songs.append(test);
 }
+
