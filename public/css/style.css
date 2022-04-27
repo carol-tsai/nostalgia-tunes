@@ -52,9 +52,9 @@ p {
 }
 
 aside {
-  flex: 0;
+  display: block;
   background-color: var(--tertiary);
-  padding: 80px;
+  width: 350px;
   text-align: left;
   color: var(--light);
 }
@@ -174,3 +174,14 @@ img {
   align-content: flex-start;
   align-items: center;
 }
+
+nav{
+  height: 50px;
+}
+
+
+
+
+
+
+

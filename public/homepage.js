@@ -141,3 +141,11 @@ submit.addEventListener("click", function (event) {
 
 // var day = getElementById("day");
 // console.log(day.value);
+
+var songs = document.querySelector("#songs")
+
+for (i = 0; i <= 20; i++){
+  var test = document.createElement("div");
+  test.textContent = "SONG";
+  songs.append(test);
+}
