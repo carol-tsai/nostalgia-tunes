@@ -5,26 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nostalgia Tunes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <a href="https://www.fontspace.com/category/disco"><img src="https://see.fontimg.com/api/renderfont4/v51E/eyJyIjoiZnMiLCJoIjo4MCwidyI6MTAwMCwiZnMiOjgwLCJmZ2MiOiIjRTJCMTBDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Tm9zdGFsZ2lhIFR1bmVz/discoteque-st.png" alt="Disco fonts"></a>
+
 </head>
 
 <body>
-  <header>
-    <h1>Nostalgia Tunes</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a href="/">Home</a>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </li>
+    </ul>
   </nav>
+  <a href="https://www.fontspace.com/category/disco"><img
+      src="https://see.fontimg.com/api/renderfont4/v51E/eyJyIjoiZnMiLCJoIjo4MCwidyI6MTAwMCwiZnMiOjgwLCJmZ2MiOiIjRTJCMTBDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Tm9zdGFsZ2lhIFR1bmVz/discoteque-st.png"
+      alt="Disco fonts" class="center"></a>
   <main>
-    <aside>
-      <h2>Playlist here</h2>
-    </aside>
     <div class="gallery">
       {{{body}}}
     </div>

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Playlist, Song} = require('../models');
-const { route } = require('./user-routes');
+const { route } = require('./api/userRoutes');
 
 router.get('/',  (req,res) => {
     res.render('homepage')
