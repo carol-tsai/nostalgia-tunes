@@ -1,3 +1,5 @@
+
+
 // define variables
 var nativePicker = document.querySelector(".nativeDatePicker");
 var fallbackPicker = document.querySelector(".fallbackDatePicker");
@@ -132,12 +134,27 @@ daySelect.onchange = function () {
 };
 
 var submit = document.querySelector("#submitbutton");
-submit.addEventListener("click", function (event) {
+submit.addEventListener("click", getBillboard);
+
+
+async function getBillboard(event) {
   event.preventDefault();
   console.log("click");
   var day = daySelect.value;
-  console.log(day);
-});
+
+  const response = await fetch('/api/song/billboard', {
+    method: 'POST',
+    body: JSON.stringify({day}),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+
+  const chartData = await response.json();
+  console.log(chartData);
+
+    // console.log(day);
+}
 
 // var day = getElementById("day");
 // console.log(day.value);
