@@ -154,13 +154,8 @@ async function getBillboard(event) {
 
   const chartData = await response.json();
 
-
-
   // console.log(day);
-
-
   renderSongs(chartData);
-    
 }
 
 
