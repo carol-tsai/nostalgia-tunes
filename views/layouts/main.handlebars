@@ -22,9 +22,11 @@
     {{/if}}
   </nav>
   <main>
-    <aside id="songs">
-      <h2>Top 20 songs</h2>
+    {{#if loggedIn}}
+    <aside id="playlist">
+      <h2>Playlists</h2>
     </aside>
+    {{/if}}
     <div class="gallery">
         <div style="background-color: rgba(255,255,255,.5);">
       {{{body}}}
