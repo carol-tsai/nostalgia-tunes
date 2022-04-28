@@ -31,7 +31,7 @@ const signupFormHandler = async (event) => {
   console.log(username, email, password);
   if (username && email && password) {
     if (password.length > 6) {
-      const response = await fetch("/api/users", {
+      const response = await fetch("/users", {
         method: "POST",
         body: JSON.stringify({ username, email, password }),
         headers: { "Content-Type": "application/json" },

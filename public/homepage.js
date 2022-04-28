@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 //const req = require("express/lib/request");
 
 
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 // define variables
 var nativePicker = document.querySelector(".nativeDatePicker");
 // var fallbackPicker = document.querySelector(".fallbackDatePicker");
@@ -140,40 +137,28 @@ function populateDays(month) {
 var submit = document.querySelector("#submitbutton");
 submit.addEventListener("click", getBillboard);
 
+
 async function getBillboard(event) {
   event.preventDefault();
   console.log("click");
   var day = daySelect.value;
 
-  const response = await fetch("/api/song/billboard", {
-    method: "POST",
-    body: JSON.stringify({ day }),
+  const response = await fetch('/api/song/billboard', {
+    method: 'POST',
+    body: JSON.stringify({day}),
     headers: {
-      "Content-Type": "application/json",
-    },
-  });
+      'Content-Type': 'application/json',
+    }
+  })
 
   const chartData = await response.json();
   
 
-<<<<<<< HEAD
-  // console.log(day);
-=======
   renderSongs(chartData);
     
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 }
 
 
-<<<<<<< HEAD
-var songs = document.querySelector("#songs");
-
-for (i = 0; i <= 20; i++) {
-  var test = document.createElement("div");
-  test.textContent = "SONG";
-  songs.append(test);
-}
-=======
 
 
 function renderSongs(chart){
@@ -226,4 +211,3 @@ async function handleSave(event){
 }
 
 
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
