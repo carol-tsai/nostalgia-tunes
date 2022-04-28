@@ -182,7 +182,6 @@ function renderSongs(chart){
 async function handleSave(event){
   var checkPlaylist = await fetch("/api/playlist", {
     method: "GET"
-
   })
 
   console.log(checkPlaylist)
