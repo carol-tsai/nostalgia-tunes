@@ -68,6 +68,11 @@ nav a {
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -185,16 +190,6 @@ input {
   padding: 3px;
 }
 
-<<<<<<< HEAD
-.homepageimg {
-  max-width: 50%;
-  height: auto;
-}
-.btn {
-  display: flex;
-  justify-content: center;
-}
-=======
 #songs h2{
   text-align: center;
 }
@@ -204,7 +199,6 @@ input {
   padding-bottom: 10px;
 }
 
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 
 .btn:hover {
   color: whitesmoke;
