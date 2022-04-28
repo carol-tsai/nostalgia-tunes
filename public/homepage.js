@@ -132,12 +132,34 @@ daySelect.onchange = function () {
 };
 
 var submit = document.querySelector("#submitbutton");
-submit.addEventListener("click", function (event) {
+submit.addEventListener("click", getBillboard);
+
+async function getBillboard(event) {
   event.preventDefault();
   console.log("click");
   var day = daySelect.value;
-  console.log(day);
-});
+
+  const response = await fetch("/api/song/billboard", {
+    method: "POST",
+    body: JSON.stringify({ day }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const chartData = await response.json();
+  console.log(chartData);
+
+  // console.log(day);
+}
 
 // var day = getElementById("day");
 // console.log(day.value);
+
+var songs = document.querySelector("#songs");
+
+for (i = 0; i <= 20; i++) {
+  var test = document.createElement("div");
+  test.textContent = "SONG";
+  songs.append(test);
+}
