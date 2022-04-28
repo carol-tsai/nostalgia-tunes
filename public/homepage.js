@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-=======
 //const req = require("express/lib/request");
 
-
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 // define variables
 var nativePicker = document.querySelector(".nativeDatePicker");
 // var fallbackPicker = document.querySelector(".fallbackDatePicker");
@@ -154,76 +150,52 @@ async function getBillboard(event) {
   });
 
   const chartData = await response.json();
-  
 
-<<<<<<< HEAD
-  // console.log(day);
-=======
   renderSongs(chartData);
-    
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 }
 
-
-<<<<<<< HEAD
-var songs = document.querySelector("#songs");
-
-for (i = 0; i <= 20; i++) {
-  var test = document.createElement("div");
-  test.textContent = "SONG";
-  songs.append(test);
-}
-=======
-
-
-function renderSongs(chart){
-
-  var songs = document.querySelector("#songs")
+function renderSongs(chart) {
+  var songs = document.querySelector("#songs");
   songs.innerHTML = "";
   console.log(chart);
-  for (i = 0; i < chart.length; i++){
+  for (i = 0; i < chart.length; i++) {
     var test = document.createElement("div");
     var saveButton = document.createElement("button");
-    saveButton.setAttribute("id",`${chart[i].rank}`)
+    saveButton.setAttribute("id", `${chart[i].rank}`);
     test.textContent = `${chart[i].title}  by: ${chart[i].artist}    `;
     songs.append(test);
-    saveButton.textContent = "Save song to playlist"
+    saveButton.textContent = "Save song to playlist";
     test.append(saveButton);
-    document.getElementById(`${chart[i].rank}`).addEventListener("click", handleSave)
-
+    document
+      .getElementById(`${chart[i].rank}`)
+      .addEventListener("click", handleSave);
   }
 }
 
-async function handleSave(event){
+async function handleSave(event) {
   var checkPlaylist = await fetch("/api/playlist", {
-    method: "GET"
+    method: "GET",
+  });
 
-  })
-
-  console.log(checkPlaylist)
-  if(checkPlaylist.status == 404){
+  console.log(checkPlaylist);
+  if (checkPlaylist.status == 404) {
     var createPlaylist = await fetch("/api/playlist", {
       method: "POST",
-      body: JSON.stringify({name: "newPlaylist",user_id: "1"}),
-      
-    })
-  if(checkPlaylist.ok){
-    console.log("Working")
-  }
-  else{
-    console.log("Not working")
-  }
+      body: JSON.stringify({ name: "newPlaylist", user_id: "1" }),
+    });
+    if (checkPlaylist.ok) {
+      console.log("Working");
+    } else {
+      console.log("Not working");
+    }
   }
   // var response = await fetch("/api/playlist",{
   //   method: "POST",
   //   body: JSON.stringify({req.body})
-  
+
   // })
 
   // if (response.ok){
   //   console.log(response)
   // }
 }
-
-
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
