@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   try {
     const newPlaylist = await Playlist.create({
       name: req.body.playlistName,
-      user_id: req.session.user_id,
+      user_id: req.session.userId,
     });
 
     res.status(200).json(newPlaylist);

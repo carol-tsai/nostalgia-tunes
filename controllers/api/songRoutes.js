@@ -21,11 +21,13 @@ router.post('/billboard', async (req, res) => {
   
 })
 
-router.post('/:playlist_id', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const newSong = await Song.create({
-      ...req.body,
-      playlist_id: req.params.playlist_id
+      name: req.body.title,
+      artist: req.body.artist,
+      playlist_id: req.body.playlist_id
     });
 
     res.status(200).json(newSong);
