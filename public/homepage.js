@@ -9,6 +9,8 @@ var nativePicker = document.querySelector(".nativeDatePicker");
 var yearSelect = document.querySelector("#year");
 var monthSelect = document.querySelector("#month");
 var daySelect = document.querySelector("#musicDay");
+let addPlaylistEl = document.querySelector('#addPlaylistBtn');
+var playlistNameEl = document.querySelector("#playlistName");
 
 // hide fallback initially
 // fallbackPicker.style.display = "none";
@@ -152,8 +154,6 @@ async function getBillboard(event) {
   })
 
   const chartData = await response.json();
-  
-
   renderSongs(chartData);
     
 }
@@ -210,4 +210,19 @@ async function handleSave(event){
   // }
 }
 
+// Add a New Playlist
+addPlaylistEl.addEventListener('click', addPlaylist)
+
+async function addPlaylist(event) {
+  event.preventDefault();
+  playlistName = playlistNameEl.value;
+  playlistNameEl.value = "";
+  const response = await fetch('/api/playlist', {
+    method: 'POST',
+    body: JSON.stringify({ playlistName }),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+}
 
