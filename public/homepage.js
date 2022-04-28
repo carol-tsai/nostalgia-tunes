@@ -208,13 +208,19 @@ addPlaylistEl.addEventListener("click", addPlaylist);
 
 async function addPlaylist(event) {
   event.preventDefault();
-  playlistName = playlistNameEl.value;
-  playlistNameEl.value = "";
+
+  let playlistName = playlistNameEl.value;
+  console.log(playlistName);
+
   const response = await fetch("/api/playlist", {
     method: "POST",
     body: JSON.stringify({ playlistName }),
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+  console.log(await response.json());
+  playlistNameEl.value = "";
 }

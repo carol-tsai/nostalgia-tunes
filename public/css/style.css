@@ -185,7 +185,6 @@ input {
   padding: 3px;
 }
 
-<<<<<<< HEAD
 .homepageimg {
   max-width: 50%;
   height: auto;
@@ -194,17 +193,18 @@ input {
   display: flex;
   justify-content: center;
 }
-=======
-#songs h2{
+#songs h2 {
   text-align: center;
 }
 
-#songs div{
+#songs div {
   padding-top: 10px;
   padding-bottom: 10px;
+  font-weight: 700;
+  justify-content: center;
+  display: flex;
+  color: rgba(255, 165, 0, 0.8);
 }
-
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 
 .btn:hover {
   color: whitesmoke;
@@ -233,4 +233,31 @@ input {
 
   color: rgba(255, 165, 0, 0.8);
   font-weight: 800;
+}
+
+#1 {
+  border: 5px;
+  border-color: rgba(255, 165, 0, 0.8);
+  justify-content: center;
+  display: flex;
+}
+
+#text {
+  display: inline-block;
+  width: 110px;
+}
+
+/* form {
+  display: flex;
+  justify-content: center;
+}
+.top {
+  display: flex;
+  justify-content: center;
+} */
+.welcome,
+.top,
+form {
+  display: flex;
+  justify-content: center;
 }

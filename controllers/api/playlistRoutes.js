@@ -1,28 +1,31 @@
-const router = require('express').Router();
-const { Playlist } = require('../../models');
+const router = require("express").Router();
+const { Playlist } = require("../../models");
 
-// ADD UPDATE 
+// ADD UPDATE
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newPlaylist = await Playlist.create({
-      ...req.body,
+      name: req.body.playlistName,
       user_id: req.session.user_id,
     });
 
     res.status(200).json(newPlaylist);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(err.toString());
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    const newPlaylist = await Playlist.update({
-      ...req.body,
-    }, {
-      id: req.params.id
-    });
+    const newPlaylist = await Playlist.update(
+      {
+        ...req.body,
+      },
+      {
+        id: req.params.id,
+      }
+    );
 
     res.status(200).json(newPlaylist);
   } catch (err) {
@@ -30,7 +33,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const playlistData = await Playlist.destroy({
       where: {
@@ -40,7 +43,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!playlistData) {
-      res.status(404).json({ message: 'No playlist found!' });
+      res.status(404).json({ message: "No playlist found!" });
       return;
     }
 
