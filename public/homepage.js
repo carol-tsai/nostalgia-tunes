@@ -216,6 +216,7 @@ async function addPlaylist(event) {
   event.preventDefault();
   playlistName = playlistNameEl.value;
   playlistNameEl.value = "";
+  console.log(playlistName);
   const response = await fetch('/api/playlist', {
     method: 'POST',
     body: JSON.stringify({ playlistName }),
@@ -223,5 +224,7 @@ async function addPlaylist(event) {
       'Content-Type': 'application/json',
     }
   })
+  let data = await response.json();
+  console.log(data);
 }
 
