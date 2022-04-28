@@ -17,20 +17,23 @@
     <a href="/">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
+    <a href="/profile">Profile</a>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
   </nav>
   <main>
     {{#if loggedIn}}
-    <aside id="playlist">
+    {{!-- <aside id="playlist">
       <h2>Playlists</h2>
       <form>
         <input type="text" id="playlistName" name="playlistName"><br>
         <button id="addPlaylistBtn">Add Playlist</button>
       </form>
-      
-    </aside>
+      {{#each playlists as |playlist|}}
+      <div>{{playlist.name}}</div>
+      {{/each}}
+    </aside> --}}
     {{/if}}
     <div class="gallery">
         <div style="background-color: rgba(255,255,255,.5);">

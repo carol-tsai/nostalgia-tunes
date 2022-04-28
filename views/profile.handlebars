@@ -1,23 +1,17 @@
-
-
 <div class="row mb-4 project">
-  {{#if loggedIn}}
-  <p>Welcome</p>
-  {{else}}
-  <p>Log in to access all of our features!</p>
-  {{/if}}
+  <h2>Welcome {{username}}</h2>
 </div>
 
 <form>
-  {{#if loggedIn}}
+  
   <aside id="playlist">
     <h2>Playlists</h2>
     <form>
       <input type="text" id="playlistName" name="playlistName"><br>
       <button id="addPlaylistBtn">Add Playlist</button>
     </form>
-    {{#each playlists as |playlist|}}
-    <div>{{playlist.name}}</div>
+    {{#each user.playlists as |playlist|}}
+    <h3><a href="/playlist/{{playlist.id}}">{{playlist.name}}</a></h3>
     {{/each}}
   </aside>
   <div class="nativeDatePicker">
@@ -29,13 +23,10 @@
   <button id="submitbutton">submit</button>
 </form>
 
-
-
 <div>
   <h2>Top 20 songs</h2>
   <div id="songs"></div>
 </div>
-{{/if}}
 
-<script src="/homepage.js"></script>
 
+{{!-- <script src="/profile.js"></script> --}}

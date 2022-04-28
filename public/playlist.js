@@ -9,7 +9,6 @@ var nativePicker = document.querySelector(".nativeDatePicker");
 var yearSelect = document.querySelector("#year");
 var monthSelect = document.querySelector("#month");
 var daySelect = document.querySelector("#musicDay");
-let addPlaylistEl = document.querySelector('#addPlaylistBtn');
 var playlistNameEl = document.querySelector("#playlistName");
 
 // hide fallback initially
@@ -162,12 +161,16 @@ async function getBillboard(event) {
 
 
 function renderSongs(chart){
-
+ 
   var songs = document.querySelector("#songs")
   songs.innerHTML = "";
   console.log(chart);
   for (i = 0; i < chart.length; i++){
     var test = document.createElement("div");
+    test.setAttribute("data-title",`${chart[i].title}`)
+    test.setAttribute("data-artist",`${chart[i].artist}`)
+    // var span1 = document.createElement("span");
+    // var span2 = document.createElement("span");
     var saveButton = document.createElement("button");
     saveButton.setAttribute("id",`${chart[i].rank}`)
     test.textContent = `${chart[i].title}  by: ${chart[i].artist}    `;
@@ -180,39 +183,67 @@ function renderSongs(chart){
 }
 
  async function handleSave(event){
-   var checkPlaylist = await fetch("/api/playlist", {
-     method: "GET"
-   })
+     event.preventDefault();
+     console.log(event.target);
+     console.log(event.target.parentNode);
+     const title = event.target.parentNode.getAttribute("data-title")
+     const artist = event.target.parentNode.getAttribute("data-artist")
+     console.log(title)
+     console.log(artist)
+     const playlist_id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ];
+     console.log(playlist_id)
+
+     if (title && artist && playlist_id ) {
+        const response = await fetch(`/api/song`, {
+          method: 'POST',
+          body: JSON.stringify({ title, artist, playlist_id }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+     
+        if (response.ok) {
+          document.location.replace(`/playlist/${playlist_id}`);
+        } else {
+          alert('Failed to create project');
+        }
+      }
+//    var checkPlaylist = await fetch("/api/playlist", {
+//      method: "POST"
+//    })
 
    
 
-   if (response.ok){
-     console.log(response)
-   }
+//    if (response.ok){
+//      console.log(response)
+//  }
  }
 
-// Add a New Playlist
-addPlaylistEl.addEventListener('click', addPlaylist)
 
-async function addPlaylist(event) {
-  event.preventDefault();
-  playlistName = playlistNameEl.value;
-  playlistNameEl.value = "";
-  console.log(playlistName);
-  const response = await fetch('/api/playlist', {
-    method: 'POST',
-    body: JSON.stringify({ playlistName }),
-    headers: {
-      'Content-Type': 'application/json',
+const newFormHandler = async (event) => {
+    event.preventDefault();
+  
+    const name = document.querySelector('#project-name').value.trim();
+    const needed_funding = document.querySelector('#project-funding').value.trim();
+    const description = document.querySelector('#project-desc').value.trim();
+  
+    if (name && needed_funding && description) {
+      const response = await fetch(`/api/projects`, {
+        method: 'POST',
+        body: JSON.stringify({ name, needed_funding, description }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to create project');
+      }
     }
-  })
-  let data = await response.json();
-  console.log(data);
-
-  if (response.ok) {
-    document.location.replace('/');
-  }
-}
-
+  };
 
 
