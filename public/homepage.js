@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 //const req = require("express/lib/request");
 
 
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 // define variables
 var nativePicker = document.querySelector(".nativeDatePicker");
 // var fallbackPicker = document.querySelector(".fallbackDatePicker");
@@ -12,6 +9,8 @@ var nativePicker = document.querySelector(".nativeDatePicker");
 var yearSelect = document.querySelector("#year");
 var monthSelect = document.querySelector("#month");
 var daySelect = document.querySelector("#musicDay");
+let addPlaylistEl = document.querySelector('#addPlaylistBtn');
+var playlistNameEl = document.querySelector("#playlistName");
 
 // hide fallback initially
 // fallbackPicker.style.display = "none";
@@ -154,11 +153,14 @@ async function getBillboard(event) {
   });
 
   const chartData = await response.json();
+<<<<<<< HEAD
+=======
   
 
 <<<<<<< HEAD
   // console.log(day);
 =======
+>>>>>>> origin/main
   renderSongs(chartData);
     
 >>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
@@ -225,5 +227,20 @@ async function handleSave(event){
   // }
 }
 
+// Add a New Playlist
+addPlaylistEl.addEventListener('click', addPlaylist)
+
+async function addPlaylist(event) {
+  event.preventDefault();
+  playlistName = playlistNameEl.value;
+  playlistNameEl.value = "";
+  const response = await fetch('/api/playlist', {
+    method: 'POST',
+    body: JSON.stringify({ playlistName }),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+}
 
 >>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
