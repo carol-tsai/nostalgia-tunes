@@ -92,6 +92,16 @@ nav button:hover {
   background-color: var(--dark);
 }
 
+#playlistName {
+  margin-left: 20px;
+}
+
+#addPlaylistBtn {
+  background: darkgoldenrod;
+  border-radius: 10px;
+  margin: 10px 0 0 60px;
+}
+
 .gallery {
   flex: 4;
   padding: 50px;
@@ -204,6 +214,10 @@ input {
 
 #songs h2{
   text-align: center;
+}
+
+h2 {
+  padding-left: 20px;
 }
 
 #songs div{
