@@ -54,7 +54,7 @@ p {
 aside {
   display: block;
   background-color: var(--tertiary);
-  width: 350px;
+  width: 500px;
   text-align: left;
   color: var(--light);
 }
@@ -177,6 +177,15 @@ img {
 
 nav{
   height: 50px;
+}
+
+#songs h2{
+  text-align: center;
+}
+
+#songs div{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 

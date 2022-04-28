@@ -170,7 +170,7 @@ function renderSongs(chart){
     var test = document.createElement("div");
     var saveButton = document.createElement("button");
     saveButton.setAttribute("id",`${chart[i].rank}`)
-    test.textContent = `${chart[i].title}  by: ${chart[i].artist}`;
+    test.textContent = `${chart[i].title}  by: ${chart[i].artist}    `;
     songs.append(test);
     saveButton.textContent = "Save song to playlist"
     test.append(saveButton);
