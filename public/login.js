@@ -5,7 +5,7 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    const response = await fetch("/users/login", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
@@ -31,7 +31,7 @@ const signupFormHandler = async (event) => {
   console.log(username, email, password);
   if (username && email && password) {
     if (password.length > 6) {
-      const response = await fetch("/users", {
+      const response = await fetch("/api/users", {
         method: "POST",
         body: JSON.stringify({ username, email, password }),
         headers: { "Content-Type": "application/json" },
