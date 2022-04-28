@@ -226,6 +226,10 @@ async function addPlaylist(event) {
   })
   let data = await response.json();
   console.log(data);
+
+  if (response.ok) {
+    document.location.replace('/');
+  }
 }
 
 
