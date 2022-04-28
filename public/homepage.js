@@ -1,15 +1,21 @@
+<<<<<<< HEAD
+=======
+//const req = require("express/lib/request");
+
+
+>>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 // define variables
 var nativePicker = document.querySelector(".nativeDatePicker");
-var fallbackPicker = document.querySelector(".fallbackDatePicker");
-var fallbackLabel = document.querySelector(".fallbackLabel");
+// var fallbackPicker = document.querySelector(".fallbackDatePicker");
+// var fallbackLabel = document.querySelector(".fallbackLabel");
 
 var yearSelect = document.querySelector("#year");
 var monthSelect = document.querySelector("#month");
 var daySelect = document.querySelector("#musicDay");
 
 // hide fallback initially
-fallbackPicker.style.display = "none";
-fallbackLabel.style.display = "none";
+// fallbackPicker.style.display = "none";
+// fallbackLabel.style.display = "none";
 
 // test whether a new date input falls back to a text input or not
 var test = document.createElement("input");
@@ -24,8 +30,8 @@ try {
 if (test.type === "text") {
   // hide the native picker and show the fallback
   nativePicker.style.display = "none";
-  fallbackPicker.style.display = "block";
-  fallbackLabel.style.display = "block";
+  // fallbackPicker.style.display = "block";
+  // fallbackLabel.style.display = "block";
 
   // populate the days and years dynamically
   // (the months are always the same, therefore hardcoded)
@@ -99,37 +105,37 @@ function populateDays(month) {
   }
 }
 
-function populateYears() {
-  // get this year as a number
-  var date = new Date();
-  var year = date.getFullYear();
+// function populateYears() {
+//   // get this year as a number
+//   var date = new Date();
+//   var year = date.getFullYear();
 
-  // Make this year, and the 100 years before it available in the year <select>
-  for (var i = 0; i <= 100; i++) {
-    var option = document.createElement("option");
-    option.textContent = year - i;
-    yearSelect.appendChild(option);
-  }
-}
+//   // Make this year, and the 100 years before it available in the year <select>
+//   for (var i = 0; i <= 100; i++) {
+//     var option = document.createElement("option");
+//     option.textContent = year - i;
+//     yearSelect.appendChild(option);
+//   }
+// }
 
-// when the month or year <select> values are changed, rerun populateDays()
-// in case the change affected the number of available days
-yearSelect.onchange = function () {
-  populateDays(monthSelect.value);
-};
+// // when the month or year <select> values are changed, rerun populateDays()
+// // in case the change affected the number of available days
+// yearSelect.onchange = function () {
+//   populateDays(monthSelect.value);
+// };
 
-monthSelect.onchange = function () {
-  populateDays(monthSelect.value);
-};
+// monthSelect.onchange = function () {
+//   populateDays(monthSelect.value);
+// };
 
-//preserve day selection
-var previousDay;
+// //preserve day selection
+// var previousDay;
 
-// update what day has been set to previously
-// see end of populateDays() for usage
-daySelect.onchange = function () {
-  previousDay = daySelect.value;
-};
+// // update what day has been set to previously
+// // see end of populateDays() for usage
+// daySelect.onchange = function () {
+//   previousDay = daySelect.value;
+// };
 
 var submit = document.querySelector("#submitbutton");
 submit.addEventListener("click", getBillboard);
@@ -148,14 +154,18 @@ async function getBillboard(event) {
   });
 
   const chartData = await response.json();
-  console.log(chartData);
+  
 
+<<<<<<< HEAD
   // console.log(day);
+=======
+  renderSongs(chartData);
+    
+>>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 }
 
-// var day = getElementById("day");
-// console.log(day.value);
 
+<<<<<<< HEAD
 var songs = document.querySelector("#songs");
 
 for (i = 0; i <= 20; i++) {
@@ -163,3 +173,57 @@ for (i = 0; i <= 20; i++) {
   test.textContent = "SONG";
   songs.append(test);
 }
+=======
+
+
+function renderSongs(chart){
+
+  var songs = document.querySelector("#songs")
+  songs.innerHTML = "";
+  console.log(chart);
+  for (i = 0; i < chart.length; i++){
+    var test = document.createElement("div");
+    var saveButton = document.createElement("button");
+    saveButton.setAttribute("id",`${chart[i].rank}`)
+    test.textContent = `${chart[i].title}  by: ${chart[i].artist}    `;
+    songs.append(test);
+    saveButton.textContent = "Save song to playlist"
+    test.append(saveButton);
+    document.getElementById(`${chart[i].rank}`).addEventListener("click", handleSave)
+
+  }
+}
+
+async function handleSave(event){
+  var checkPlaylist = await fetch("/api/playlist", {
+    method: "GET"
+
+  })
+
+  console.log(checkPlaylist)
+  if(checkPlaylist.status == 404){
+    var createPlaylist = await fetch("/api/playlist", {
+      method: "POST",
+      body: JSON.stringify({name: "newPlaylist",user_id: "1"}),
+      
+    })
+  if(checkPlaylist.ok){
+    console.log("Working")
+  }
+  else{
+    console.log("Not working")
+  }
+  }
+  // var response = await fetch("/api/playlist",{
+  //   method: "POST",
+  //   body: JSON.stringify({req.body})
+  
+  // })
+
+  // if (response.ok){
+  //   console.log(response)
+  // }
+}
+
+
+>>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c

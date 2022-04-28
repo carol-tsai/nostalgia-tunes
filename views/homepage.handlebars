@@ -1,7 +1,11 @@
 
 
 <div class="row mb-4 project">
-  <p>Hello World</p>
+  {{#if loggedIn}}
+  <p>Welcome</p>
+  {{else}}
+  <p>Log in to access all of our features!</p>
+  {{/if}}
 </div>
 
 <form>
@@ -10,9 +14,9 @@
     <input type="date" id="musicDay" name="startDay">
     <span class="validity"></span>
   </div>
-  <p class="fallbackLabel">Enter the date you want music from:</p>
-  <div class="fallbackDatePicker">
-    <span>
+  {{!-- <p class="fallbackLabel">Enter the date you want music from:</p> --}}
+  {{!-- <div class="fallbackDatePicker"> --}}
+    {{!-- <span>
       <label for="day">Day:</label>
       <select id="day" name="day">
       </select>
@@ -38,9 +42,9 @@
       <label for="year">Year:</label>
       <select id="year" name="year">
       </select>
-    </span>
+    </span> --}}
     
-  </div>
+  {{!-- </div> --}}
   <button id="submitbutton">submit</button>
 </form>
 
