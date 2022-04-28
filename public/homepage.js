@@ -179,25 +179,25 @@ function renderSongs(chart){
   }
 }
 
-async function handleSave(event){
-  var checkPlaylist = await fetch("/api/playlist", {
-    method: "GET"
-  })
+// async function handleSave(event){
+//   var checkPlaylist = await fetch("/api/playlist", {
+//     method: "GET"
+//   })
 
-  console.log(checkPlaylist)
-  if(checkPlaylist.status == 404){
-    var createPlaylist = await fetch("/api/playlist", {
-      method: "POST",
-      body: JSON.stringify({name: "newPlaylist",user_id: "1"}),
+//   console.log(checkPlaylist)
+//   if(checkPlaylist.status == 404){
+//     var createPlaylist = await fetch("/api/playlist", {
+//       method: "POST",
+//       body: JSON.stringify({name: "newPlaylist",user_id: "1"}),
       
-    })
-  if(checkPlaylist.ok){
-    console.log("Working")
-  }
-  else{
-    console.log("Not working")
-  }
-  }
+//     })
+//   if(checkPlaylist.ok){
+//     console.log("Working")
+//   }
+//   else{
+//     console.log("Not working")
+//   }
+//   }
   // var response = await fetch("/api/playlist",{
   //   method: "POST",
   //   body: JSON.stringify({req.body})
@@ -207,7 +207,7 @@ async function handleSave(event){
   // if (response.ok){
   //   console.log(response)
   // }
-}
+// }
 
 // Add a New Playlist
 addPlaylistEl.addEventListener('click', addPlaylist)
@@ -227,4 +227,6 @@ async function addPlaylist(event) {
   let data = await response.json();
   console.log(data);
 }
+
+
 
