@@ -1,8 +1,7 @@
-/* #loginContainer {
-  background-image: url(../images/boomboxes.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.page-title {
+  display: flex;
+  justify-content: center;
+}
 
 :root {
   --primary: #3d5852;
@@ -130,7 +129,7 @@ img {
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 100%;
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
@@ -175,10 +174,27 @@ img {
   align-items: center;
 }
 
-nav{
+nav {
   height: 50px;
 }
+label {
+  display: inline-block;
+  width: 110px;
+}
+input {
+  padding: 3px;
+}
 
+<<<<<<< HEAD
+.homepageimg {
+  max-width: 50%;
+  height: auto;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+=======
 #songs h2{
   text-align: center;
 }
@@ -188,9 +204,33 @@ nav{
   padding-bottom: 10px;
 }
 
+>>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
 
+.btn:hover {
+  color: whitesmoke;
+  background-color: rgba(255, 165, 0, 0.8);
+}
 
+.login-card {
+  position: relative;
+}
 
+/* .hoverimg {
+  position: absolute;
+  display: none;
+  z-index: 50;
+  object-fit: contain;
+}
 
+.login-card:hover > .hoverimg { */
+.login-card:hover {
+  background-image: url(https://media4.giphy.com/media/13CpJR7THZgaaY/giphy.gif?cid=ecf05e47ep8m0lk6czl4xm2eveqbxz8i4dvu6ltjh1tpadex&rid=giphy.gif&ct=g);
+  /* https://media2.giphy.com/media/l3vQY93bN54rXJTrO/giphy.gif?cid=ecf05e471p5b86td07kxcr26ldqh16av7i4q9zf6bsfnhxhj&rid=giphy.gif&ct=g
+  display: block;
+  margin: auto;
 
+  /* clip: rect(20px, 100px, 100px, 0); */
 
+  color: rgba(255, 165, 0, 0.8);
+  font-weight: 800;
+}
