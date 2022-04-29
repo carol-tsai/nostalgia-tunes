@@ -1,12 +1,10 @@
-
-
-<div class="row mb-4 project">
+<main class="row mb-4 project">
   {{#if loggedIn}}
   <p>Welcome</p>
   {{else}}
   <p>Log in to access all of our features!</p>
   {{/if}}
-</div>
+</main>
 
 <form>
   {{#if loggedIn}}
@@ -20,22 +18,26 @@
     <div>{{playlist.name}}</div>
     {{/each}}
   </aside>
-  {{!-- <div class="nativeDatePicker">
-    <label for="musicDate">Enter the date you want music from:</label>
-    <input type="date" id="musicDay" name="startDay">
-    <span class="validity"></span>
+  <div class="hide">
+    <div class="nativeDatePicker">
+      <label for="musicDate">Enter the date you want music from:</label>
+      <input type="date" id="musicDay" name="startDay">
+      <span class="validity"></span>
+      <button id="submitbutton">submit</button>
+      <div>
+        <h2>Top 20 songs</h2>
+        <div id="songs"></div>
+      </div>
+    </div>
   </div>
-  
-  <button id="submitbutton">submit</button> --}}
+
+
+
 </form>
+
+
+
+
 {{/if}}
 
-
-{{!-- <div>
-  <h2>Top 20 songs</h2>
-  <div id="songs"></div>
-</div> --}}
-
-
 <script src="/homepage.js"></script>
-

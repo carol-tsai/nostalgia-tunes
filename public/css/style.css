@@ -233,10 +233,48 @@ input {
   font-weight: 800;
 }
 
-.pTag{
-  font-size: 30px;
+.hide{
+  
+  display: none;
 }
 
-.h2Tag{
-  font-size: 30px;
+.songDiv {
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 165, 0, 0.8);
+  border: #577a7c;
+  border-style: solid;
+  border-radius: 2px;
 }
+
+.songDiv:hover {
+  background-color: #3d5852;
+  color: whitesmoke;
+}
+
+.h2Tag {
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.pTag {
+  border: #577a7c;
+  border-style: solid;
+  border-radius: 2px;
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.nativeDatePicker{
+  display: flex;
+  justify-content: center;
+}
+
+#logout:hover{
+  color: #86938f;
+  background-color: var(--dark);
+}
+
