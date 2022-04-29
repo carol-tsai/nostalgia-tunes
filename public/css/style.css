@@ -185,7 +185,6 @@ input {
   padding: 3px;
 }
 
-<<<<<<< HEAD
 .homepageimg {
   max-width: 50%;
   height: auto;
@@ -194,7 +193,6 @@ input {
   display: flex;
   justify-content: center;
 }
-=======
 #songs h2{
   text-align: center;
 }
@@ -204,7 +202,7 @@ input {
   padding-bottom: 10px;
 }
 
->>>>>>> b25928e3ced600723ab201c56d2ec0b689d2771c
+
 
 .btn:hover {
   color: whitesmoke;
