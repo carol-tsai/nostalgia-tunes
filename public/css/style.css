@@ -232,3 +232,11 @@ input {
   color: rgba(255, 165, 0, 0.8);
   font-weight: 800;
 }
+
+.pTag{
+  font-size: 30px;
+}
+
+.h2Tag{
+  font-size: 30px;
+}
