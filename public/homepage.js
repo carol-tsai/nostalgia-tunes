@@ -104,37 +104,7 @@ function populateDays(month) {
   }
 }
 
-// function populateYears() {
-//   // get this year as a number
-//   var date = new Date();
-//   var year = date.getFullYear();
 
-//   // Make this year, and the 100 years before it available in the year <select>
-//   for (var i = 0; i <= 100; i++) {
-//     var option = document.createElement("option");
-//     option.textContent = year - i;
-//     yearSelect.appendChild(option);
-//   }
-// }
-
-// // when the month or year <select> values are changed, rerun populateDays()
-// // in case the change affected the number of available days
-// yearSelect.onchange = function () {
-//   populateDays(monthSelect.value);
-// };
-
-// monthSelect.onchange = function () {
-//   populateDays(monthSelect.value);
-// };
-
-// //preserve day selection
-// var previousDay;
-
-// // update what day has been set to previously
-// // see end of populateDays() for usage
-// daySelect.onchange = function () {
-//   previousDay = daySelect.value;
-// };
 
 var submit = document.querySelector("#submitbutton");
 submit.addEventListener("click", getBillboard);
@@ -169,13 +139,13 @@ function renderSongs(chart){
   for (i = 0; i < chart.length; i++){
     var test = document.createElement("div");
     var saveButton = document.createElement("button");
+    saveButton.setAttribute("class","test")
     saveButton.setAttribute("id",`${chart[i].rank}`)
     test.textContent = `${chart[i].title}  by: ${chart[i].artist}    `;
     songs.append(test);
     saveButton.textContent = "Save song to playlist"
     test.append(saveButton);
     document.getElementById(`${chart[i].rank}`).addEventListener("click", handleSave)
-
   }
 }
 

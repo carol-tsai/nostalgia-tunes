@@ -1,32 +1,19 @@
 <div class="row mb-4 project">
-  <h2>Welcome {{username}}</h2>
+  <h2 style="text-align:center">Choose Playlist</h2>
 </div>
 
 <form>
   
   <aside id="playlist">
     <h2>Playlists</h2>
-    <form>
-      <input type="text" id="playlistName" name="playlistName"><br>
-      <button id="addPlaylistBtn">Add Playlist</button>
-    </form>
     {{#each user.playlists as |playlist|}}
     <h3><a href="/playlist/{{playlist.id}}">{{playlist.name}}</a></h3>
     {{/each}}
   </aside>
-  <div class="nativeDatePicker">
-    <label for="musicDate">Enter the date you want music from:</label>
-    <input type="date" id="musicDay" name="startDay">
-    <span class="validity"></span>
-  </div>
+ 
   
-  <button id="submitbutton">submit</button>
 </form>
 
-<div>
-  <h2>Top 20 songs</h2>
-  <div id="songs"></div>
-</div>
 
 
-{{!-- <script src="/profile.js"></script> --}}
+
